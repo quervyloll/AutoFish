@@ -12,3 +12,6 @@ A simple lightweight mod that automates the fishing process.
 - Reeling in manually, your right mouse button, will automatically disable the auto fishing.
 - The delay is reccomended to be set to 10-20 ticks.
 ![example](https://github.com/quervyloll/AutoFish/blob/main/2024-10-04_03.48.42.png)
+
+# Modrinth download
+If you don't trust the build for some reaosn, there's a modrinth page you can download it from [here](https://modrinth.com/mod/auto-fish).
