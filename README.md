@@ -4,7 +4,7 @@ A simple lightweight mod that automates the fishing process.
 
 ## Setup
 - `/autofish true` will start the auto fishing mod. Do `/autofish false` to disable.
-- `/delay (ticks)` is a command where you can set the delay of the rod being casted. The default value is 20 ticks, or 1 second on a 20 tps server. 1 tick is equal to 50ms.
+- `/delay (ticks)` is a command where you can set the delay of the rod being recasted. The default value is 20 ticks, or 1 second on a 20 tps server. 1 tick is equal to 50ms.
 
 ## Key notes
 - You need to hold a fishing rod in order to active auto fishing.
