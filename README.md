@@ -1,6 +1,6 @@
 # AutoFishing
 
-A simple autofishing mod for Minecraft 1.21.1, feel free to use!
+A simple lightweight mod that automates the fishing process.
 
 ## Setup
 - `/autofish true` will start the auto fishing mod. Do `/autofish false` to disable.
