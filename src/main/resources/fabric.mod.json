@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "autofish",
+	"version": "${version}",
+	"name": "AutoFish",
+	"description": "This is a very basic auto fishing mod.",
+	"authors": [
+		"quervylol"
+	],
+	"contact": {
+		"homepage": "https://github.com/quervyloll/AutoFish",
+		"sources": "https://github.com/quervyloll/AutoFish"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/modid/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.quervylol.ExampleMod"
+		],
+		"client": [
+			"com.quervylol.AutoFish"
+		]
+	},
+	"mixins": [
+		"modid.mixins.json",
+		{
+			"config": "modid.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.2",
+		"minecraft": "~1.21.1",
+		"java": ">=21"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
