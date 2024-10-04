@@ -14,7 +14,7 @@ public class DelayCommand {
                         .executes(context -> {
                             int ticks = IntegerArgumentType.getInteger(context, "ticks");
                             AutoFishCommand.REEL_DELAY_TICKS = ticks;
-                            context.getSource().sendFeedback(Text.literal("Reel in delay set to " + ticks + " ticks.").formatted(Formatting.GREEN));
+                            context.getSource().sendFeedback(Text.literal("Cast delay set to " + ticks + " ticks.").formatted(Formatting.GREEN));
                             return 1;
                         }))
                 .executes(context -> {
