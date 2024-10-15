@@ -101,10 +101,12 @@ public class AutoFishCommand {
                         lastCastAutomated = true;
                     }
 
-                    if (fishingTicks >= CAST_WAIT_TICKS && isFishBiting()) {
-                        reelIn();
-                        fishingTicks = 0;
-                        postReelDelayTicks = REEL_DELAY_TICKS;
+                    if (fishingTicks >= CAST_WAIT_TICKS) {
+                        if (isFishBiting()) {
+                            reelIn();
+                            fishingTicks = 0;
+                            postReelDelayTicks = REEL_DELAY_TICKS;
+                        }
                     }
                 }
             }
@@ -137,7 +139,9 @@ public class AutoFishCommand {
     private static boolean isFishBiting() {
         if (client.player != null && client.player.fishHook != null) {
             Vec3d velocity = client.player.fishHook.getVelocity();
-            return velocity.y < -0.05;
+            if (velocity.y < -0.05 && fishingTicks > CAST_WAIT_TICKS / 2) {
+                return true;
+            }
         }
         return false;
     }
