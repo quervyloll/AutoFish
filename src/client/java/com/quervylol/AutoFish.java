@@ -9,6 +9,7 @@ public class AutoFish implements ClientModInitializer {
 		ClientCommandRegistrationCallback.EVENT.register((dispatcher, registryAccess) -> {
 			AutoFishCommand.register(dispatcher);
 			DelayCommand.register(dispatcher);
+			InventoryCheckCommand.register(dispatcher);
 		});
 	}
 }
