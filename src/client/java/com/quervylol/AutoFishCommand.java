@@ -12,6 +12,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.Formatting;
+import net.minecraft.client.gui.screen.ChatScreen;
 
 public class AutoFishCommand {
     private static boolean isAutoFishing = false;
@@ -22,6 +23,7 @@ public class AutoFishCommand {
     private static final int CAST_WAIT_TICKS = 100;
     public static int REEL_DELAY_TICKS = 20;
     private static int postReelDelayTicks = 0;
+    private static boolean stopOnInventoryOpen = false;
 
     public static void register(CommandDispatcher<FabricClientCommandSource> dispatcher) {
         dispatcher.register(ClientCommandManager.literal("autofish")
@@ -73,6 +75,12 @@ public class AutoFishCommand {
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             if (isAutoFishing && client.player != null) {
+                if (stopOnInventoryOpen && client.currentScreen != null && !(client.currentScreen instanceof ChatScreen)) {
+                    stopAutoFishing();
+                    client.player.sendMessage(Text.literal("Auto fishing disabled! Opened GUI!").formatted(Formatting.RED));
+                    return;
+                }
+
                 if (client.player.getMainHandStack().getItem() != Items.FISHING_ROD) {
                     stopAutoFishing();
                     client.player.sendMessage(Text.literal("Auto fishing disabled! Swapped item!").formatted(Formatting.RED));
@@ -140,5 +148,9 @@ public class AutoFishCommand {
             client.interactionManager.interactItem(client.player, Hand.MAIN_HAND);
             client.player.playSound(SoundEvents.ENTITY_FISHING_BOBBER_RETRIEVE, 1.0F, 1.0F);
         }
+    }
+
+    public static void setStopOnInventoryOpen(boolean value) {
+        stopOnInventoryOpen = value;
     }
 }
