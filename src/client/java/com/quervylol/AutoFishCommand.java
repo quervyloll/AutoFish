@@ -35,12 +35,7 @@ public class AutoFishCommand {
                                 context.getSource().sendError(Text.literal("Player not found."));
                                 return 0;
                             }
-
-                            if (enable && client.player.getMainHandStack().getItem() != Items.FISHING_ROD) {
-                                context.getSource().sendError(Text.literal("You must hold a fishing rod to use auto fishing."));
-                                return 0;
-                            }
-
+                            
                             if (enable) {
                                 if (isAutoFishing) {
                                     context.getSource().sendError(Text.literal("Auto fishing is already enabled."));
