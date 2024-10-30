@@ -12,6 +12,7 @@ A simple lightweight mod that automates the fishing process.
 - Swapping from the fishing rod to a different item will automatically disable the auto fishing.
 - Reeling in manually, your right mouse button, will automatically disable the auto fishing.
 - The delay is reccomended to be set to 10-20 ticks.
+- If you are using any form of a custom fishing rod, please use [this](https://github.com/quervyloll/AutoFish/tree/custom-fishing-rods) branch.
 ![example](https://github.com/quervyloll/AutoFish/blob/main/2024-10-04_03.48.42.png)
 
 ### Modrinth download
